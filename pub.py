@@ -8,7 +8,7 @@ import flight
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
-        print(" ----- Connected to Client ----- ")
+        print(" ----- Client Connected ----- ")
     else:
         print("Error connect code : " + str(rc))
 
@@ -21,11 +21,11 @@ client = mqtt.Client('Publisher')
 client.on_connect = on_connect
 client.on_message = on_message
 
-# connecting to broker emqx on port 1883
+# connecting to broker emqx or broker hivemq on port 1883
 # client.connect('broker.emqx.io', port = 1883)
 client.connect('broker.hivemq.com', port = 1883)
 
-clear = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
+clear = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear') # Function for Clearing the terminal screen
 def header():
     print('------------------------- Lion Air Schedule Notification -------------------------')
 def footer():
@@ -48,6 +48,12 @@ def showSched():
     footer()
     input("\nPress Enter to continue...")
 
+# The function to send selected schedule to the subscriber
+
+# Schedule that has already been sent will not be able to be announced again
+
+# The schedule will be encoded into json type string to be able to be sent through
+# using mqtt
 def sendMenu():
     clear()
     header()
