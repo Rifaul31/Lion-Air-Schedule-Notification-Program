@@ -1,10 +1,8 @@
 # Import libraries
 import paho.mqtt.client as mqtt
 import os
-import time
 import datetime
 import json
-from threading import Thread
 
 # -------------------- MQTT Setup --------------------
 def on_connect(client, userdata, flags, rc):
@@ -22,8 +20,8 @@ def on_connect(client, userdata, flags, rc):
 # into a text file, any time format will be saved in boarding.txt and any transit
 # location will be saved in lokasi.txt
 def on_message(client, userdata, msg):
-    jsonData = msg.payload.decode("utf-8")
-    sched = json.loads(jsonData)
+    jsonData = msg.payload.decode("utf-8") 
+    sched = json.loads(jsonData) # Decode data from JSON type string
     if sched['id'] in sessCode:
         print("\n##### Received Previously Notified Schedule #####")
     else:

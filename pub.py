@@ -74,8 +74,8 @@ def sendMenu():
             return
         else: 
             sessCode.append(id)
-            send_data = json.dumps(sched)
-            client.publish("/LionAirSchedule", send_data, 1)
+            send_data = json.dumps(sched) # Encode data into JSON type string
+            client.publish("/LionAirSchedule", send_data, 1) # Publish Data
             clear()
             print('##### Schedule Notification Delivered #####')
             input("\nPress Enter to continue...")
