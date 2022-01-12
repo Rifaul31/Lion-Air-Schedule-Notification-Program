@@ -1,10 +1,10 @@
 # Lion Air Schedule Notification Program
 
-# Identitas
-
------------ Kelompok 3 (Lion Air Group) -----------  
+# Group 3 (Lion Air Group)  
 PERNANDA ARYA BHAGASKARA S.M (1301190184)
+
 NAUFAL XEELA PANDITYATAMA (1301194177)  
+
 AULIA RAHMAN ARIF WAHYUDI (1301194195)
 
 # Problem Formulation
