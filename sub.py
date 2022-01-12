@@ -14,6 +14,13 @@ def on_connect(client, userdata, flags, rc):
         print("Error connect code : " + str(rc))
 
 # The callback for when a PUBLISH message is received from the server.
+
+# When receiving message payload from the publisher, the message will be decoded
+# from json type string into it's original type (in this case, it's a dictionary)
+
+# Schedule that is received will be shown on the terminal and the data will be saved
+# into a text file, any time format will be saved in boarding.txt and any transit
+# location will be saved in lokasi.txt
 def on_message(client, userdata, msg):
     jsonData = msg.payload.decode("utf-8")
     sched = json.loads(jsonData)
