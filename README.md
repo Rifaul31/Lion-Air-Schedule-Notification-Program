@@ -18,4 +18,5 @@ informasi jadwal boarding dan lokasi transit. Apabila jadwal boarding dan lokasi
 Run the program using terminal with Python 3 or higher integrated to the system
 
 Pub.py : Act as the publisher, utilized by the Lion Air employee to announce the schedule of a flight
+
 Sub.py : Act as the subscriber, utilized by the passesnger to receive announcement of the flight schedule
